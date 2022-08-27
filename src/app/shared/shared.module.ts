@@ -7,8 +7,12 @@ import { SearchResultPageComponent } from '../pages/search-result-page/search-re
 import { HomeCardComponent } from '../components/home-card/home-card.component';
 import { PostCardComponent } from '../components/post-card/post-card.component';
 import { SearchCardComponent } from '../components/search-card/search-card.component';
+import { BaseService } from './services/base.service';
+import { PostService } from './services/post-service';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
+  providers: [BaseService, PostService],
   declarations: [
     HomePageComponent,
     CategoryPageComponent,
@@ -18,6 +22,6 @@ import { SearchCardComponent } from '../components/search-card/search-card.compo
     PostCardComponent,
     SearchCardComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, AppRoutingModule],
 })
 export class SharedModule {}
