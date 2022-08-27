@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/shared/services/post-service';
+import { ITopic } from 'src/app/shared/types';
+import topicsJSON from '../../../assets/data/topics.json';
 
 @Component({
   selector: 'app-categories-page',
@@ -9,6 +11,9 @@ import { PostService } from 'src/app/shared/services/post-service';
 })
 export class CategoryPageComponent implements OnInit {
   id: string = '';
+  topic?: ITopic = undefined;
+  postCount: number = 0;
+
   constructor(
     private postService: PostService,
     private route: ActivatedRoute
@@ -20,9 +25,14 @@ export class CategoryPageComponent implements OnInit {
 
     // get related data
     if (this.id) {
-      this.postService
-        .getPostById(this.id)
-        .subscribe((data) => console.log(data));
+      // selected topic
+      this.topic = topicsJSON.topics[parseInt(this.id) - 1];
+
+      // get posts by category id
+      this.postService.getPostsByCategoryId(this.id).subscribe((data) => {
+        this.postCount = data.length;
+        // console.log(data)
+      });
     }
   }
 }

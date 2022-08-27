@@ -10,6 +10,7 @@ import { SearchCardComponent } from '../components/search-card/search-card.compo
 import { BaseService } from './services/base.service';
 import { PostService } from './services/post-service';
 import { AppRoutingModule } from '../app-routing.module';
+import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   providers: [BaseService, PostService],
@@ -21,6 +22,7 @@ import { AppRoutingModule } from '../app-routing.module';
     HomeCardComponent,
     PostCardComponent,
     SearchCardComponent,
+    BreadcrumbComponent
   ],
   imports: [CommonModule, AppRoutingModule],
 })

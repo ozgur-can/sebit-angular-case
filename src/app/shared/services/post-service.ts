@@ -15,7 +15,7 @@ export class PostService extends BaseService {
     return this.base.getReq('posts');
   }
 
-  getPostById(id: string): Observable<IPost[]> {
-    return this.base.getReq(`posts/${id}`);
+  getPostsByCategoryId(id: string): Observable<IPost[]> {
+    return this.base.getReq(`posts?category_id=${id}`);
   }
 }
