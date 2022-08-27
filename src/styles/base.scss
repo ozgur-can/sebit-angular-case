@@ -1,0 +1,23 @@
+.baseContainer {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .baseContainer {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .baseContainer {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .baseContainer {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .baseContainer {
+    max-width: 1200px;
+  }
+}
