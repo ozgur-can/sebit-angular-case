@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/shared/services/post-service';
-import { ITopic } from 'src/app/shared/types';
+import { IPost, ITopic } from 'src/app/shared/types';
 import topicsJSON from '../../../assets/data/topics.json';
 
 @Component({
@@ -12,6 +12,7 @@ import topicsJSON from '../../../assets/data/topics.json';
 export class CategoryPageComponent implements OnInit {
   id: string = '';
   topic?: ITopic = undefined;
+  posts?: IPost[] = [];
   postCount: number = 0;
 
   constructor(
@@ -30,8 +31,9 @@ export class CategoryPageComponent implements OnInit {
 
       // get posts by category id
       this.postService.getPostsByCategoryId(this.id).subscribe((data) => {
+        // set post count & posts to be displayed
         this.postCount = data.length;
-        // console.log(data)
+        this.posts = data;
       });
     }
   }

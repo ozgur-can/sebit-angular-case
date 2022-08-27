@@ -1,1 +1,11 @@
-<div class="searchCard"></div>
+<div class="searchCard" *ngIf="post!">
+    <p class="text-xl font-light text-indigo-700 my-2">{{post!.title}}</p>
+    <p class="text-gray-400">{{post!.description}}</p>
+    <div class="searchCard__author my-5">
+        <img class="w-8 h-8 rounded-full" src='/assets/images/profile.png' alt='users'>
+        <div class="text-sm">
+            <div>Written by <span class="font-bold">{{post!.author}}</span></div>
+            <div>{{post!.date | date:'MMMM d y'}}</div>
+        </div>
+    </div>
+</div>

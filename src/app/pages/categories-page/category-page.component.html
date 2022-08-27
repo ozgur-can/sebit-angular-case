@@ -7,4 +7,5 @@
             <p>{{topic!.description}}</p>
         </div>
     </div>
+    <app-search-card *ngFor="let item of posts" [post]="item"></app-search-card>
 </div>
