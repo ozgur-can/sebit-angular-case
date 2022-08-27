@@ -1,0 +1,21 @@
+.commonCard {
+  border: 1px solid darkgray;
+  height: 8rem;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+}
+
+// title + content + icon
+.homeCard {
+  @extend .commonCard;
+}
+
+// title + content + user
+.postCard {
+  @extend .commonCard;
+}
+
+// title + content + user + tags
+.searchCard {
+  @extend .commonCard;
+}
