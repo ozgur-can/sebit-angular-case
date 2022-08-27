@@ -1,6 +1,4 @@
 <div class="baseContainer mt-8 flex justify-between flex-col md:flex-row md:flex-wrap gap-2">
-    <app-home-card class="homeCardWrapper"></app-home-card>
-    <app-home-card class="homeCardWrapper"></app-home-card>
-    <app-home-card class="homeCardWrapper"></app-home-card>
-    <app-home-card class="homeCardWrapper"></app-home-card>
+    <app-home-card class="homeCardWrapper" *ngFor="let item of topics" [topicTitle]="item.title" [topicIcon]="item.icon"
+        [topicDescription]="item.description"></app-home-card>
 </div>
