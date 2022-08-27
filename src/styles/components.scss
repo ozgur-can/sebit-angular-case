@@ -1,13 +1,24 @@
 .commonCard {
-  border: 1px solid darkgray;
-  height: 8rem;
+  border: 1px solid rgb(226, 224, 224);
+  height: 12rem;
   margin-bottom: 15px;
   padding: 10px 20px;
+  border-radius: 3px;
 }
 
 // title + content + icon
 .homeCard {
   @extend .commonCard;
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  align-items: center;
+  .homeCard__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 60%;
+  }
 }
 
 // title + content + user
