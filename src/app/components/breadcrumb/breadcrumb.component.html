@@ -1,1 +1,4 @@
-<div><a class="text-blue-500 underline" [routerLink]="['/home']">Home Page</a> / {{topicTitle}}</div>
+<div>
+    <a class="text-blue-500 underline" [routerLink]="['/home']">Home Page</a>
+    <span *ngIf="isLeveled"> / {{topicTitle}}</span>
+</div>

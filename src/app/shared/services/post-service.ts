@@ -29,4 +29,8 @@ export class PostService extends BaseService {
       )
     );
   }
+
+  getPostById(id: string): Observable<IPost> {
+    return this.base.getReq(`posts/${id}`);
+  }
 }

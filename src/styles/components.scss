@@ -25,6 +25,25 @@
 // title + content + user + tags
 .postCard {
   @extend .commonCard;
+  flex-direction: column;
+  height: auto;
+  padding-bottom: 20px;
+  margin: 1.5rem 0;
+  cursor: default;
+  .postCard__authorDetails {
+    display: flex;
+    margin: 30px 0 18px 0;
+    gap: 10px;
+  }
+
+  .postCard__tags {
+    display: flex;
+    gap: 8px;
+    .postCard__tags__buttons {
+      display: flex;
+      gap: 8px;
+    }
+  }
 }
 
 // title + content + user

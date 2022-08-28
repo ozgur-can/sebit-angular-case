@@ -1,1 +1,14 @@
-<div class="postCard"></div>
+<div class="postCard" *ngIf="post">
+    <p class="text-xl font-semibold pt-1 pb-5">{{post!.title}}</p>
+    <p class="text-gray-800">{{post.description}}</p>
+    <div class="postCard__authorDetails">
+        <div class="bg-indigo-400 text-white p-1 rounded-sm">{{post.author}}</div>
+        <div class="bg-gray-100 text-indigo-400 p-1 rounded-sm">{{post.date | date:'d MMMM y'}}</div>
+    </div>
+    <div class="postCard__tags">
+        Tags:
+        <div class="postCard__tags__buttons">
+            <button class="bg-gray-200 px-1 rounded-md" *ngFor="let tag of tagButtons">{{tag}}</button>
+        </div>
+    </div>
+</div>
