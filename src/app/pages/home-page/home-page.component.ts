@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ITopic } from 'src/app/shared/types';
 import topicsJSON from '../../../assets/data/topics.json';
 
@@ -10,7 +9,7 @@ import topicsJSON from '../../../assets/data/topics.json';
 })
 export class HomePageComponent implements OnInit {
   topics: ITopic[] = topicsJSON.topics;
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
