@@ -11,6 +11,7 @@ import { BaseService } from './services/base.service';
 import { PostService } from './services/post-service';
 import { AppRoutingModule } from '../app-routing.module';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
 
 @NgModule({
   providers: [BaseService, PostService],
@@ -22,7 +23,8 @@ import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.compone
     HomeCardComponent,
     PostCardComponent,
     SearchCardComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ShortenPipe
   ],
   imports: [CommonModule, AppRoutingModule],
 })

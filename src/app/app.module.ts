@@ -8,6 +8,7 @@ import { CommonSearchComponent } from './components/common-search/common-search.
 import { BaseService } from './shared/services/base.service';
 import { PostService } from './shared/services/post-service';
 import { HttpClientModule } from '@angular/common/http';
+import { ShortenPipe } from './shared/pipes/shorten.pipe';
 
 @NgModule({
   declarations: [AppComponent, CommonSearchComponent],

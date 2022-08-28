@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/shared/services/post-service';
-import { IPost, ITopic } from 'src/app/shared/types';
+import { IPost, ITopic, PostOrder } from 'src/app/shared/types';
 import topicsJSON from '../../../assets/data/topics.json';
 
 @Component({
@@ -29,8 +29,8 @@ export class CategoryPageComponent implements OnInit {
       // selected topic
       this.topic = topicsJSON.topics[parseInt(this.id) - 1];
 
-      // get posts by category id
-      this.postService.getPostsByCategoryId(this.id).subscribe((data) => {
+      // get posts by category id in ASC order
+      this.postService.getPostsByCategoryId(this.id, PostOrder.DESC).subscribe((data) => {
         // set post count & posts to be displayed
         this.postCount = data.length;
         this.posts = data;

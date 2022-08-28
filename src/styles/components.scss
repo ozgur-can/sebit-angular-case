@@ -32,6 +32,7 @@
   @extend .commonCard;
   height: auto;
   flex-direction: column;
+  cursor: default;
   .searchCard__author {
     gap: 15px;
     display: flex;

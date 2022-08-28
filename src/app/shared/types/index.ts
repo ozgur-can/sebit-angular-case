@@ -20,3 +20,8 @@ export interface ICategory {
   description: string;
   icon: string;
 }
+
+export enum PostOrder {
+  ASC = 0,
+  DESC = 1
+}
