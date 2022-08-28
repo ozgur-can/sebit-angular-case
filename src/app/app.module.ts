@@ -12,7 +12,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, CommonSearchComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [BaseService, PostService],
   bootstrap: [AppComponent],
 })

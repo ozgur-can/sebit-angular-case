@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ITopic } from 'src/app/shared/types';
 
 @Component({
   selector: 'app-home-card',
@@ -6,9 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['../../../styles/components.scss'],
 })
 export class HomeCardComponent implements OnInit {
-  @Input() topicIcon: string = '';
-  @Input() topicTitle: string = '';
-  @Input() topicDescription: string = '';
+  @Input() topic?: ITopic = undefined;
   constructor() {}
 
   ngOnInit(): void {}

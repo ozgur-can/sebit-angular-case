@@ -1,5 +1,6 @@
 import { IPost, PostOrder } from '../types';
 
+// function for sorting in service
 export const sortPostsByDate = (posts: IPost[], order: PostOrder) => {
   return posts.sort((a: IPost, b: IPost) => {
     if (order === PostOrder.ASC) {

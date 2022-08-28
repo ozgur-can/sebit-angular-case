@@ -12,6 +12,7 @@ import { PostService } from './services/post-service';
 import { AppRoutingModule } from '../app-routing.module';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   providers: [BaseService, PostService],
@@ -24,8 +25,8 @@ import { ShortenPipe } from './pipes/shorten.pipe';
     PostCardComponent,
     SearchCardComponent,
     BreadcrumbComponent,
-    ShortenPipe
+    ShortenPipe,
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, BrowserModule],
 })
 export class SharedModule {}

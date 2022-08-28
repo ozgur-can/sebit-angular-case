@@ -23,7 +23,7 @@ export class SearchResultPageComponent implements OnInit {
       // get filter text
       this.text = params.text! || this.route.snapshot.paramMap.get('text')!;
 
-      // subscribe to post service
+      // get filtered posts values & update postFound value for UI  
       this.postService
         .getPostByText(this.text, PostOrder.DESC)
         .subscribe((data) => {

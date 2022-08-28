@@ -9,7 +9,7 @@ export class BaseService {
 
   constructor(public http: HttpClient) {}
 
-  getReq(url: string) {
+  getRequest(url: string) {
     return this.http.get<[] | any>(`${this.baseUrl}/${url}`);
   }
 }

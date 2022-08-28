@@ -20,6 +20,7 @@ export class PostDetailPageComponent implements OnInit {
     // get category id
     this.id = this.route.snapshot.paramMap.get('id')!;
 
+    // get posts if id is proper value
     if (this.id) {
       this.postService
         .getPostById(this.id)

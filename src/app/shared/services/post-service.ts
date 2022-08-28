@@ -13,21 +13,25 @@ export class PostService extends BaseService {
     super(base.http);
   }
 
+  // get all posts
   getPosts(): Observable<IPost[]> {
-    return this.base.getReq('posts');
+    return this.base.getRequest('posts');
   }
 
+  // get all posts with category id
   getPostsByCategoryId(id: string, order: PostOrder): Observable<IPost[]> {
     return this.base
-      .getReq(`posts?category_id=${id}`)
+      .getRequest(`posts?category_id=${id}`)
       .pipe(map((results: IPost[]) => sortPostsByDate(results, order)));
   }
 
+  // get specific post with post id
   getPostById(id: string): Observable<IPost> {
-    return this.base.getReq(`posts/${id}`);
+    return this.base.getRequest(`posts/${id}`);
   }
 
+  // get all posts which includes given text value
   getPostByText(text: string, order: PostOrder): Observable<IPost[]> {
-    return this.base.getReq(`posts?q=${text}`).pipe(map((results: IPost[]) => sortPostsByDate(results, order)));;
+    return this.base.getRequest(`posts?q=${text}`).pipe(map((results: IPost[]) => sortPostsByDate(results, order)));;
   }
 }

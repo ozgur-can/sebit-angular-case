@@ -1,7 +1,7 @@
-<div class="homeCard">
-    <img src='/assets/icons/{{topicIcon}}.svg' class="w-16" alt="">
+<div class="homeCard" *ngIf="topic">
+    <img src='/assets/icons/{{topic!.icon}}.svg' class="w-16" alt="">
     <div class="homeCard__content">
-        <p class="text-2xl">{{topicTitle}}</p>
-        <p>{{topicDescription}}</p>
+        <p class="text-2xl">{{topic!.title}}</p>
+        <p>{{topic!.description}}</p>
     </div>
 </div>

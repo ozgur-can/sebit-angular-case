@@ -16,14 +16,15 @@ export class CommonSearchComponent implements OnInit {
   ngOnInit(): void {}
 
   formOnSubmit() {
+    // get text from form
     let searchText: string = this.searchForm.get('text')!.value!;
 
+    // navigate to new url if text is proper
     if (searchText) {
-      console.log('nav', searchText);
-      
       this.router.navigateByUrl(`/search/${searchText}`);
     }
 
+    // clear form values after navigate
     this.searchForm.setValue({
       text: null,
     });
