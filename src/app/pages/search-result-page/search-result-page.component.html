@@ -1,5 +1,7 @@
 <div class="baseContainer mt-8">
     <app-breadcrumb [isLeveled]="false"></app-breadcrumb>
     <div *ngIf="text.length > 0" class="text-2xl font-medium mt-6 mb-5">Filtered posts by: {{text}}</div>
+    <p *ngIf="postFound" class="font-light">Post not found with <span
+            class="italic font-semibold underline">{{text}}</span> keyword</p>
     <app-search-card *ngFor="let item of posts" [post]="item"></app-search-card>
 </div>

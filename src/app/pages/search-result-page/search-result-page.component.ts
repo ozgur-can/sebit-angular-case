@@ -11,6 +11,7 @@ import { IPost, PostOrder } from 'src/app/shared/types';
 export class SearchResultPageComponent implements OnInit {
   text: string = '';
   posts: IPost[] = [];
+  postFound: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private postService: PostService
@@ -18,13 +19,17 @@ export class SearchResultPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
+      this.postFound = false;
       // get filter text
       this.text = params.text! || this.route.snapshot.paramMap.get('text')!;
 
       // subscribe to post service
       this.postService
         .getPostByText(this.text, PostOrder.DESC)
-        .subscribe((data) => (this.posts = data));
+        .subscribe((data) => {
+          if (data.length === 0) this.postFound = true;
+          this.posts = data;
+        });
     });
   }
 }

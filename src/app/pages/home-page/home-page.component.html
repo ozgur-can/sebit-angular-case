@@ -1,4 +1,4 @@
-<div class="baseContainer mt-8 flex justify-between flex-col md:flex-row md:flex-wrap gap-2">
+<div class="baseContainer mt-8 flex justify-between flex-col md:flex-row md:flex-wrap gap-2 mb-5">
     <app-home-card class="homeCardWrapper" *ngFor="let item of topics, let id = index" [topicTitle]="item.title"
         [topicIcon]="item.icon" [topicDescription]="item.description" [routerLink]="['/category', id + 1]">
     </app-home-card>
