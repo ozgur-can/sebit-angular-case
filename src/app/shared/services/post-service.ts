@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { IPost, PostOrder } from '../types';
 import { BaseService } from './base.service';
 import { map } from 'rxjs/operators';
+import { sortPostsByDate } from '../helpers';
 
 @Injectable({
   providedIn: 'root',
@@ -17,20 +18,16 @@ export class PostService extends BaseService {
   }
 
   getPostsByCategoryId(id: string, order: PostOrder): Observable<IPost[]> {
-    return this.base.getReq(`posts?category_id=${id}`).pipe(
-      map((results: IPost[]) =>
-        results.sort((a: IPost, b: IPost) => {
-          if (order === PostOrder.ASC) {
-            return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
-          } else {
-            return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
-          }
-        })
-      )
-    );
+    return this.base
+      .getReq(`posts?category_id=${id}`)
+      .pipe(map((results: IPost[]) => sortPostsByDate(results, order)));
   }
 
   getPostById(id: string): Observable<IPost> {
     return this.base.getReq(`posts/${id}`);
+  }
+
+  getPostByText(text: string, order: PostOrder): Observable<IPost[]> {
+    return this.base.getReq(`posts?q=${text}`).pipe(map((results: IPost[]) => sortPostsByDate(results, order)));;
   }
 }

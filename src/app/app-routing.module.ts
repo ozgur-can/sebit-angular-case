@@ -19,7 +19,7 @@ const routes: Routes = [
     component: PostDetailPageComponent,
   },
   {
-    path: 'search',
+    path: 'search/:text',
     component: SearchResultPageComponent,
   },
   {
