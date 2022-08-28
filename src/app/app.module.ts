@@ -8,11 +8,11 @@ import { CommonSearchComponent } from './components/common-search/common-search.
 import { BaseService } from './shared/services/base.service';
 import { PostService } from './shared/services/post-service';
 import { HttpClientModule } from '@angular/common/http';
-import { ShortenPipe } from './shared/pipes/shorten.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, CommonSearchComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule, ReactiveFormsModule],
   providers: [BaseService, PostService],
   bootstrap: [AppComponent],
 })

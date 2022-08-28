@@ -17,11 +17,14 @@ export class SearchResultPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // get filter text
-    this.text = this.route.snapshot.paramMap.get('text')!;
+    this.route.params.subscribe((params) => {
+      // get filter text
+      this.text = params.text! || this.route.snapshot.paramMap.get('text')!;
 
-    this.postService
-      .getPostByText(this.text, PostOrder.DESC)
-      .subscribe((data) => (this.posts = data));
+      // subscribe to post service
+      this.postService
+        .getPostByText(this.text, PostOrder.DESC)
+        .subscribe((data) => (this.posts = data));
+    });
   }
 }
