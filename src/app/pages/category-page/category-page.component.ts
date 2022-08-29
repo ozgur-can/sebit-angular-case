@@ -5,7 +5,7 @@ import { IPost, ITopic, PostOrder } from 'src/app/shared/types';
 import topicsJSON from '../../../assets/data/topics.json';
 
 @Component({
-  selector: 'app-categories-page',
+  selector: 'app-category-page',
   templateUrl: './category-page.component.html',
   styleUrls: ['./category-page.component.scss'],
 })
