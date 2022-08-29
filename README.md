@@ -1,6 +1,6 @@
 <h1 align="center"><b>Sebit Angular Case</b></h1>
 
-**Çalıştırmak için**
+**Code Run Steps**
 
 ```
 yarn / npm i
